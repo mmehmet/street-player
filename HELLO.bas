@@ -1,11 +1,13 @@
 10 REM *** STREET PLAYER ***
 20 REM APPLESOFT / 80-COL (PR#3)
 30 PR# 3 : HOME
-40 PRINT "PRESS ANY KEY TO START"
-50 RS = RS + 1 : IF PEEK(49152) < 128 THEN GOTO 50
-60 POKE 49168, 0
-70 RS = RND(-RS)
-80 GOSUB 9000 : REM INIT
+40 PRINT "                                 STREET PLAYER"
+45 PRINT "--------------------------------------------------------------------------------"
+50 PRINT : PRINT "PRESS ANY KEY TO START"
+60 RS = RS + 1 : IF PEEK(49152) < 128 THEN GOTO 60
+70 POKE 49168, 0
+80 RS = RND(-RS)
+90 GOSUB 9000 : REM INIT
 
 100 REM ======= MAIN LOOP =======
 110 GOSUB 1000 : REM DRAW STATUS
