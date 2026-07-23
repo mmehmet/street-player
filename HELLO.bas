@@ -1,9 +1,8 @@
 10 REM *** STREET PLAYER ***
 20 REM APPLESOFT / 80-COL (PR#3)
 30 PR# 3 : HOME
-40 PRINT "                                 STREET PLAYER"
-45 PRINT "--------------------------------------------------------------------------------"
-50 PRINT : PRINT "PRESS ANY KEY TO START"
+40 GOSUB 9500
+50 PRINT "                             PRESS ANY KEY TO START"
 60 RS = RS + 1 : IF PEEK(49152) < 128 THEN GOTO 60
 70 POKE 49168, 0
 80 RS = RND(-RS)
@@ -330,3 +329,30 @@
 9080 FOR J = 1 TO 3 : P(J) = B(J) : V(J) = 0 : D(J) = DM(J) : NEXT J
 9090 NL = 0 : HG = 0 : HD = 0 : HT = 0 : NT = 0 : SD = -1
 9095 RETURN
+
+9500 REM ======= TITLE BANNER =======
+9510 FOR TB = 1 TO 2
+9520 PRINT
+9530 FOR R = 1 TO 9 : READ B$ : PRINT B$ : NEXT R
+9540 NEXT TB
+9550 PRINT : RETURN
+
+9600 DATA "          -+++=:  :=========- :===--:     :=======.  -======= :=========- "
+9610 DATA "        .@WWWWWW- *WWWWWWWWW@ #WWWWWWM=   *WWWWWWW=  %WWWWWWW.+WWWWWWWWWM"
+9620 DATA "        #WM+--+%- -***MWW#**+ #WW#+*MWM.  *WW%****:  %WW#**** -***@WW#***"
+9630 DATA "        @W@           @WW.    #WW-  %WW:  *WW-       %WW.         #WW:"
+9640 DATA "        .#WWWWW@:     @WW.    #WWWWWW%.   *WWWWWWW.  %WWWWWW%     #WW:"
+9650 DATA "          -+#MWW@     @WW.    #WW@@MWM:   *WW*====   %WW+===-     #WW:"
+9660 DATA "        #+-..-MWM     @WW.    #WW-  *WW+  *WW*====:  %WW=====.    #WW:"
+9670 DATA "        %WWWWWWM=     @WW.    #WW-   MWM. *WWWWWWW*  %WWWWWWW:    #WW:"
+9680 DATA "        .=*%%%*:      +**     =**:   =**- -*******-  +*******.    =**."
+
+9700 DATA "        -****++:    **+         :***.   +**:    +**..*******=  :****++:"
+9710 DATA "        *WWWWWWW%  .WW@         %WWW#   -MW@   +WW# :WWWWWWW%  +WWWWWWW%"
+9720 DATA "        *WW*-=@WW+ .WW@        .MWMWM.   *WW# :MW@  :WW%====-  +WW*-=MWW:"
+9730 DATA "        *WW-  -WW% .WW@        *WM=WW+    #WW=@WM:  :WW#       +WW+  *WW-"
+9740 DATA "        *WWM@MWWM: .WW@       =WW= =WW-    :MWW#    :WWWWWWW+  +WWWWWW%"
+9750 DATA "        *WWWWMM#:  .WW@       @WM--=MW%     %WW:    :WW%::::.  +WW%*@WM+"
+9760 DATA "        *WW-       .WW@      :WWWWWWWWM:    #WW:    :WW#       +WW+  @WM:"
+9770 DATA "        *WW-       .WWM***** #WM++++*WW*    #WW:    :WW@*****  +WW+  -WW%"
+9780 DATA "        :==.        ========.==:     :==.   :==      =======-  .==.   .==:"
